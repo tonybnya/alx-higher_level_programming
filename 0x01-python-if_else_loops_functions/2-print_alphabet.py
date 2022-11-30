@@ -1,5 +1,3 @@
 #!/usr/bin/python3
-ch = ""
-for i in range(97, 123):
-	ch = chr(i)
-	print(f"{ch}", end="")
+for c in range(97, 123):
+	print(f"{chr(c)}", end="")
