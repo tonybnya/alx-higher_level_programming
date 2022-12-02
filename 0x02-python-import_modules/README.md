@@ -171,3 +171,20 @@ guillaume@ubuntu:~/0x02$
 Remember how you did (or did not) do it in C? ```#pythoniscool```
 
 ![](https://s3.amazonaws.com/alx-intranet.hbtn.io/uploads/medias/2020/9/621c6dd72e1acff708141f3fab6dfa6ff37c5ee6.jpg?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIARDDGGGOUSBVO6H7D%2F20221202%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20221202T153230Z&X-Amz-Expires=86400&X-Amz-SignedHeaders=host&X-Amz-Signature=96ea636351c5dea98a117f2ca6ddc5a80248eb31c80efc9e3cb890f488881a20)
+
+4. Who are you?
+Write a program that prints all the names defined by the compiled module [hidden_4.pyc](https://github.com/holbertonschool/0x02.py/raw/master/hidden_4.pyc) (please download it locally).
+
+- You should print one name per line, in alpha order
+- You should print only names that do not start with ```__```
+- Your code should not be executed when imported
+- Make sure you are running your code in Python3.8.x (```hidden_4.pyc``` has been compiled with this version)
+
+```sh
+guillaume@ubuntu:~/0x02$ curl -Lso "hidden_4.pyc" "https://github.com/holbertonschool/0x02.py/raw/master/hidden_4.pyc"
+guillaume@ubuntu:~/0x02$ ./4-hidden_discovery.py | sort
+my_secret_santa
+print_hidden
+print_school
+guillaume@ubuntu:~/0x02$ 
+```
