@@ -1,6 +1,8 @@
 #!/usr/bin/python3
-from sys import argv
 if __name__ == "__main__":
+    from sys import argv, exit
+    from calculator_1 import add, sub, mul, div
+
     usage = "Usage: ./100-my_calculator.py <a> operator <b>"
     error = "Unknow operator. Available operators: +, -, * and /"
     errordiv = "Error: Division by 0"
@@ -14,7 +16,6 @@ if __name__ == "__main__":
         a = int(argv[1])
         b = int(argv[3])
 
-        from calculator_1 import add, sub, mul, div
         if operator == '+':
             print("{} {} {} = {}".format(a, operator, b, add(a, b)))
         elif operator == '-':
