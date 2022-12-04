@@ -11,23 +11,23 @@ if __name__ == "__main__":
     if args != 3:
         print("{}".format(usage))
         sys.exit(1)
-    else:
-        operator = sys.argv[2]
-        a = int(sys.argv[1])
-        b = int(sys.argv[3])
 
-        if operator == '+':
-            print("{} {} {} = {}".format(a, operator, b, add(a, b)))
-        elif operator == '-':
-            print("{} {} {} = {}".format(a, operator, b, sub(a, b)))
-        elif operator == '*':
-            print("{} {} {} = {}".format(a, operator, b, mul(a, b)))
-        elif operator == '/':
-            if b == 0:
-                print("{}".format(errordiv))
-                sys.exit(1)
-            else:
-                print("{} {} {} = {}".format(a, operator, b, div(a, b)))
-        else:
-            print("{}".format(error))
-            sys.exit(1)
+    operator = sys.argv[2]
+    a = int(sys.argv[1])
+    b = int(sys.argv[3])
+    
+    if operator == '+':
+        print("{} + {} = {}".format(a, b, add(a, b)))
+    elif operator == '-':
+        print("{} - {} = {}".format(a, b, sub(a, b)))
+    elif operator == '*':
+        print("{} * {} = {}".format(a, b, mul(a, b)))
+    elif operator == '/':
+        if b == 0:
+    	    print("{}".format(errordiv))
+    	    sys.exit(1)
+
+        print("{} / {} = {}".format(a, b, div(a, b)))
+    else:
+        print("{}".format(error))
+        sys.exit(1)
