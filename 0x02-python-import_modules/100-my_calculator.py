@@ -3,13 +3,11 @@ if __name__ == "__main__":
     import sys
     from calculator_1 import add, sub, mul, div
 
-    usage = "Usage: ./100-my_calculator.py <a> operator <b>"
-    error = "Unknow operator. Available operators: +, -, * and /"
     errordiv = "Error: Division by 0"
     args = len(sys.argv[1:])
 
     if args != 3:
-        print("{}".format(usage))
+        print("Usage: ./100-my_calculator.py <a> operator <b>")
         sys.exit(1)
 
     operator = sys.argv[2]
@@ -29,5 +27,5 @@ if __name__ == "__main__":
 
         print("{} / {} = {}".format(a, b, div(a, b)))
     else:
-        print("{}".format(error))
+        print("Unknow operator. Available operators: +, -, * and /")
         sys.exit(1)
