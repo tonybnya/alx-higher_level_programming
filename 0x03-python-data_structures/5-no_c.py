@@ -6,3 +6,4 @@ def no_c(my_string):
             if ch != 'c' and ch != 'C':
                 new += ch
         return (new)
+    return (my_string)
