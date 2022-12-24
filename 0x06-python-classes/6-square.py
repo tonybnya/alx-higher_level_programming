@@ -50,14 +50,36 @@ class Square:
     def area(self):
         return (self.__size * self.__size)
 
-    def my_print(self):
-        char = '#'
-        if self.__size == 0:
-            print()
-            return
+    def pos_print(self):
+        pos = ""
+        if self.size == 0:
+            return "\n"
 
-        [print("") for i in range(self.__position[1])]
-        for i in range(self.__size):
-            [print(" ", end="") for j in range(self.__position[0])]
-            [print("{}".format(char), end="") for k in range(self.__size)]
-            print()
+        for w in range(self.position[1]):
+            pos += "\n"
+
+        for w in range(self.size):
+            for i in range(self.position[0]):
+                pos += " "
+
+            for j in range(self.size):
+                pos += "#"
+
+            pos += "\n"
+
+        return pos
+
+    def my_print(self):
+        print(self.pos_print(), end='')
+
+    # def my_print(self):
+    #     char = '#'
+    #     if self.__size == 0:
+    #         print()
+    #         return
+
+    #     [print("") for i in range(self.__position[1])]
+    #     for i in range(self.__size):
+    #         [print(" ", end="") for j in range(self.__position[0])]
+    #         [print("{}".format(char), end="") for k in range(self.__size)]
+    #         print()
