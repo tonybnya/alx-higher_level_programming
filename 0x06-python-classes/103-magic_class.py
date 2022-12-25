@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+
 """Python class MagicClass for the given Python Bytecode."""
 
 import math
