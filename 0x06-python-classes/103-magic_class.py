@@ -1,5 +1,6 @@
 """Python class MagicClass for the given Python Bytecode."""
-from math import pi
+
+import math
 
 
 class MagicClass:
@@ -19,8 +20,8 @@ class MagicClass:
 
     def area(self):
         """Area of the circle."""
-        return (self.__radius ** 2 * pi)
+        return (self.__radius ** 2 * math.pi)
 
     def circumference(self):
         """Circumference of the circle."""
-        return (2 * pi * self.__radius)
+        return (2 * math.pi * self.__radius)
