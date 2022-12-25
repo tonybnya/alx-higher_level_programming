@@ -8,7 +8,7 @@ class MagicClass:
         """
         Initialize attributes.
         Arg:
-            radius (float or int): the radius.
+            radius (float or int): the radius of the circle.
         """
         self.__radius = 0
 
@@ -18,7 +18,9 @@ class MagicClass:
         self.__radius = radius
 
     def area(self):
+        """Area of the circle."""
         return (self.__radius ** 2 * math.pi)
 
-    def circumference (self):
+    def circumference(self):
+        """Circumference of the circle."""
         return (2 * math.pi * self.__radius)
