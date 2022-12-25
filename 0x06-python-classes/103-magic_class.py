@@ -1,5 +1,5 @@
 """Python class MagicClass for the given Python Bytecode."""
-import math
+from math import pi
 
 
 class MagicClass:
@@ -12,15 +12,15 @@ class MagicClass:
         """
         self.__radius = 0
 
-        if not isinstance(radius, int) and type(radius) is not float:
+        if type(radius) is not int and type(radius) is not float:
             raise TypeError("radius must be a number")
 
         self.__radius = radius
 
     def area(self):
         """Area of the circle."""
-        return (self.__radius ** 2 * math.pi)
+        return (self.__radius ** 2 * pi)
 
     def circumference(self):
         """Circumference of the circle."""
-        return (2 * math.pi * self.__radius)
+        return (2 * pi * self.__radius)
