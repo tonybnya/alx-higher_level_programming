@@ -8,11 +8,11 @@ This module performs the addition of two integers.
 
 def add_integer(a, b=98):
     """
-    Function that adds two integers.
+    Function that adds two numbers.
 
     Args:
-        a (int): an integer
-        b (int): another integer - default value is 98
+        a (int or float): 1st number
+        b (int or float): 2nd number - default value is 98
 
     Returns:
         The integer addition of a and b.
