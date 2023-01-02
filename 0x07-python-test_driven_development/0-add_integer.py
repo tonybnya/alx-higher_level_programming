@@ -2,7 +2,7 @@
 # 0-add_integer.py
 # tonybnya
 """
-This module performs the addition of two integers.
+This module performs the addition of two numbers.
 """
 
 
