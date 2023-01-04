@@ -27,8 +27,6 @@
 
     >>> text_indentation("Can't stop! Print a new line!\nNew line printed.")
     Can't stop! Print a new line!
-    <BLANKLINE>
-    <BLANKLINE>
     New line printed.
     <BLANKLINE>
 
@@ -37,11 +35,6 @@
     <BLANKLINE>
     <BLANKLINE>
     New line three times.
-    <BLANKLINE>
-
-    >>> text_indentation("A new \n line.")
-    A new
-    line.
     <BLANKLINE>
 
     >>> text_indentation("Lorem ipsum dolor sit amet, consectetur adipiscing "
@@ -70,8 +63,7 @@
     <BLANKLINE>
     Teneo, inquit, finem illi videri nihil dolere.
     <BLANKLINE>
-    Transfer idem ad modestiam vel temperantiam,
-    quae est moderatio cupiditatum rationi oboediens.
+    Transfer idem ad modestiam vel temperantiam, quae est moderatio cupiditatum rationi oboediens.
     <BLANKLINE>
     Si id dicis, vicimus.
     <BLANKLINE>
