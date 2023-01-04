@@ -14,4 +14,4 @@ def copy_list(l):
     Returns:
         a copy of l
     """
-    return l[:]
+    return l.copy()
