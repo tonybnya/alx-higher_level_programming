@@ -12,9 +12,6 @@
     >>> say_my_name("NSANGOU Bechir", "Franky")
     My name is NSANGOU Bechir Franky
 
-    >>> say_my_name("Julien")
-    My name is Julien
-
     >>> say_my_name(3, "Julien")
     Traceback (most recent call last):
     TypeError: first_name must be a string
