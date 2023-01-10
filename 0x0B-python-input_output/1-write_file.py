@@ -22,19 +22,6 @@ def write_file(filename="", text=""):
         file.write(text)
 
     with open(filename, encoding='utf-8') as file:
-        # run = True
-        # while run:
-        #     line = file.readline()
-
-        #     if not line:
-        #         break
-
-        #     words = line.split()
-        #     chars = 0
-
-        #     for word in words:
-        #         for _ in word:
-        #             chars += 1
         lines = file.readlines()
         chars = 0
         for line in lines:
