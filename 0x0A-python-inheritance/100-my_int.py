@@ -11,10 +11,10 @@ class MyInt(int):
         """
         Inverted equivalence.
         """
-        return type(self) == type(other)
+        return int.__ne__(self, other)
 
     def __ne__(self, other):
         """
         Inverted difference.
         """
-        return type(self) != type(other)
+        return int.__eq__(self, other)
