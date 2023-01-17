@@ -58,22 +58,22 @@ class TestRectangle(unittest.TestCase):
         """ Test access to private class attribute width. """
         rec = Rectangle(1, 2)
         with self.assertRaises(TypeError):
-            rec.__width
+            width
 
     def test_accessing_to_private_class_attribute_height(self):
         """ Test access to private class attribute height. """
         rec = Rectangle(1, 2)
         with self.assertRaises(TypeError):
-            rec.__height
+            height
 
     def test_accessing_to_private_class_attribute_x(self):
         """ Test access to private class attribute x. """
         rec = Rectangle(1, 2)
         with self.assertRaises(TypeError):
-            rec.__x
+            x
 
     def test_accessing_to_private_class_attribute_y(self):
         """ Test access to private class attribute y. """
         rec = Rectangle(1, 2)
         with self.assertRaises(TypeError):
-            rec.__y
+            y
