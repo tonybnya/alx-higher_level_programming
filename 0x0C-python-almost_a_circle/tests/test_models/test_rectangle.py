@@ -77,3 +77,14 @@ class TestRectangle(unittest.TestCase):
     #     rec = Rectangle(1, 2)
     #     with self.assertRaises(TypeError):
     #         self.y
+
+    def test_area(self):
+        """ Test for the return value of area method. """
+        rec = Rectangle(4, 5)
+        self.assertEqual(rec.area(), 20)
+
+        rec.width = 3
+        self.assertEqual(rec.area(), 15)
+
+        rec.height = 9
+        self.assertEqual(rec.area(), 27)
