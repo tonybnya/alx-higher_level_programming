@@ -176,3 +176,53 @@ class TestRectangle(unittest.TestCase):
         with patch('sys.stdout', new=StringIO()) as output:
             rec.display()
             self.assertEqual(output.getvalue(), result)
+
+    def test_str_0(self):
+        """ Test __str__ return value """
+        rec = Rectangle(2, 5, 2, 4)
+        result = "[Rectangle] (1) 2/4 - 2/5\n"
+        with patch('sys.stdout', new=StringIO()) as output:
+            print(rec)
+            self.assertEqual(output.getvalue(), result)
+
+    def test_str_1(self):
+        """ Test __str__ return value """
+        rec = Rectangle(3, 2, 8, 8, 10)
+        result = "[Rectangle] (10) 8/8 - 3/2\n"
+        with patch('sys.stdout', new=StringIO()) as output:
+            print(rec)
+            self.assertEqual(output.getvalue(), result)
+
+        rec.id = 1
+        rec.width = 7
+        rec.height = 15
+        result = "[Rectangle] (1) 8/8 - 7/15\n"
+        with patch('sys.stdout', new=StringIO()) as output:
+            print(rec)
+            self.assertEqual(output.getvalue(), result)
+
+    def test_str_2(self):
+        """ Test __str__ return value """
+        rec1 = Rectangle(5, 10)
+        result = "[Rectangle] (1) 0/0 - 5/10\n"
+        with patch('sys.stdout', new=StringIO()) as output:
+            print(rec1)
+            self.assertEqual(output.getvalue(), result)
+
+        rec2 = Rectangle(25, 86, 4, 7)
+        result = "[Rectangle] (2) 4/7 - 25/86\n"
+        with patch('sys.stdout', new=StringIO()) as output:
+            print(rec2)
+            self.assertEqual(output.getvalue(), result)
+
+        rec3 = Rectangle(1, 1, 1, 1)
+        result = "[Rectangle] (3) 1/1 - 1/1\n"
+        with patch('sys.stdout', new=StringIO()) as output:
+            print(rec3)
+            self.assertEqual(output.getvalue(), result)
+
+    def test_str_3(self):
+        """ Test __str__ return value """
+        rec = Rectangle(3, 3)
+        result = "[Rectangle] (1) 0/0 - 3/3"
+        self.assertEqual(rec.__str__(), result)

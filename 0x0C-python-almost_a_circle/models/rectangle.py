@@ -106,3 +106,13 @@ class Rectangle(Base):
             rectangle += (char * self.width) + "\n"
 
         print(rectangle, end='')
+
+    def __str__(self):
+        """ Special method to print a custom string for a rectangle object. """
+        # [Rectangle] (<id>) <x>/<y> - <width>/<height>
+        string_start = "[Rectangle] "
+        string_id = "({}) ".format(self.id)
+        string_xy = "{}/{} - ".format(self.x, self.y)
+        string_wh = "{}/{}".format(self.width, self.height)
+
+        return string_start + string_id + string_xy + string_wh
