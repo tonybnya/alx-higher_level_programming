@@ -47,9 +47,9 @@ class TestBase(unittest.TestCase):
 
     def test_accessing_to_private_class_attribute(self):
         """ Test access to private class attribute. """
-        base = Base()
+        new_base = Base()
         with self.assertRaises(AttributeError):
-            base.__nb_objects
+            new_base.__nb_objects
 
 
 if __name__ == '__main__':
