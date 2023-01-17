@@ -45,6 +45,12 @@ class TestBase(unittest.TestCase):
         with self.assertRaises(TypeError):
             base = Base(1, 2)
 
+    def test_accessing_to_private_class_attribute(self):
+        """ Test access to private class attribute. """
+        base = Base()
+        with self.assertRaises(AttributeError):
+            base.__nb_objects
+
 
 if __name__ == '__main__':
     unittest.main()
