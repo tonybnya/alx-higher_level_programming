@@ -95,8 +95,14 @@ class Rectangle(Base):
     def display(self):
         """ Public method to print to the Rectangle instance with #. """
         char = '#'
-        line = ''
-        for _ in range(self.width):
-            line += char
+        # line = ''
+        # for _ in range(self.width):
+        #     line += char
+        # for _ in range(self.height):
+        #     print(line)
+        rectangle = self.y * "\n"
         for _ in range(self.height):
-            print(line)
+            rectangle += (" " * self.x)
+            rectangle += (char * self.width) + "\n"
+
+        print(rectangle, end='')

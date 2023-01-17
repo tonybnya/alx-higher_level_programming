@@ -100,7 +100,13 @@ class TestRectangle(unittest.TestCase):
             rec = Rectangle(0, 5)
 
         with self.assertRaises(ValueError):
+            rec = Rectangle(-1, 5)
+
+        with self.assertRaises(ValueError):
             rec = Rectangle(3, 0)
+
+        with self.assertRaises(ValueError):
+            rec = Rectangle(3, -1)
 
         with self.assertRaises(ValueError):
             rec = Rectangle(3, 3, -1)
@@ -119,7 +125,7 @@ class TestRectangle(unittest.TestCase):
         rec.height = 9
         self.assertEqual(rec.area(), 27)
 
-    def test_display(self):
+    def test_display_1(self):
         """ Test for Rectangle object printed using '#' character. """
         rec = Rectangle(4, 6)
         result = "####\n####\n####\n####\n####\n####\n"
@@ -137,6 +143,35 @@ class TestRectangle(unittest.TestCase):
 
         rec.height = 5
         result = "###\n###\n###\n###\n###\n"
+
+        with patch('sys.stdout', new=StringIO()) as output:
+            rec.display()
+            self.assertEqual(output.getvalue(), result)
+
+    def test_display_2(self):
+        """ Test for Rectangle object printed using '#' character. """
+        rec = Rectangle(3, 2)
+        result = "###\n###\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            rec.display()
+            self.assertEqual(str_out.getvalue(), result)
+
+        rec.x = 4
+        result = "    ###\n    ###\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            rec.display()
+            self.assertEqual(str_out.getvalue(), result)
+
+        rec.y = 2
+        result = "\n\n    ###\n    ###\n"
+        with patch('sys.stdout', new=StringIO()) as str_out:
+            rec.display()
+            self.assertEqual(str_out.getvalue(), result)
+
+    def test_display_with_custom_x_and_y(self):
+        """ Test for Rectangle object printed using '#' character. """
+        rec = Rectangle(5, 4, 1, 1)
+        result = "\n #####\n #####\n #####\n #####\n"
 
         with patch('sys.stdout', new=StringIO()) as output:
             rec.display()
