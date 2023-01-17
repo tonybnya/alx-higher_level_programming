@@ -56,29 +56,29 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(TypeError):
             rec = Rectangle()
 
-    # def test_accessing_to_private_class_attribute_width(self):
-    #     """ Test access to private class attribute width. """
-    #     rec = Rectangle(1, 2)
-    #     with self.assertRaises(TypeError):
-    #         self.width
+    def test_accessing_to_private_class_attribute_width(self):
+        """ Test access to private class attribute width. """
+        rec = Rectangle(1, 2)
+        with self.assertRaises(AttributeError):
+            rec.__width
 
-    # def test_accessing_to_private_class_attribute_height(self):
-    #     """ Test access to private class attribute height. """
-    #     rec = Rectangle(1, 2)
-    #     with self.assertRaises(TypeError):
-    #         self.height
+    def test_accessing_to_private_class_attribute_height(self):
+        """ Test access to private class attribute height. """
+        rec = Rectangle(1, 2)
+        with self.assertRaises(AttributeError):
+            rec.__height
 
-    # def test_accessing_to_private_class_attribute_x(self):
-    #     """ Test access to private class attribute x. """
-    #     rec = Rectangle(1, 2)
-    #     with self.assertRaises(TypeError):
-    #         self.x
+    def test_accessing_to_private_class_attribute_x(self):
+        """ Test access to private class attribute x. """
+        rec = Rectangle(1, 2)
+        with self.assertRaises(AttributeError):
+            rec.__x
 
-    # def test_accessing_to_private_class_attribute_y(self):
-    #     """ Test access to private class attribute y. """
-    #     rec = Rectangle(1, 2)
-    #     with self.assertRaises(TypeError):
-    #         self.y
+    def test_accessing_to_private_class_attribute_y(self):
+        """ Test access to private class attribute y. """
+        rec = Rectangle(1, 2)
+        with self.assertRaises(AttributeError):
+            rec.__y
 
     def test_area(self):
         """ Test for the return value of area method. """
