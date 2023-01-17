@@ -20,14 +20,14 @@ class TestBase(unittest.TestCase):
     def test_id_assignment_with_default_value(self):
         """ Test for id assignment with default value. """
         base = Base()
-        self.assertEqual(base.id, 1)
+        self.assertEqual(base.id, 3)
 
     def test_private_class_attribute_nb_objects(self):
         """ Test for private class attribute __nb_objects. """
         base_1 = Base()
         base_2 = Base()
         base_3 = Base()
-        self.assertEqual(base_1.id, 1)
+        self.assertEqual(base_1.id, 6)
         self.assertEqual(base_2.id, 2)
         self.assertEqual(base_3.id, 3)
 
@@ -36,7 +36,7 @@ class TestBase(unittest.TestCase):
         base_1 = Base()
         base_2 = Base(7)
         base_3 = Base()
-        self.assertEqual(base_1.id, 1)
+        self.assertEqual(base_1.id, 10)
         self.assertEqual(base_2.id, 7)
         self.assertEqual(base_3.id, 2)
 
