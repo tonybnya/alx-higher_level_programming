@@ -89,5 +89,14 @@ class Rectangle(Base):
         self.__y = value
 
     def area(self):
-        """ Computes the area of an Rectangle object. """
+        """ Public method to compute the area of an Rectangle object. """
         return self.width * self.height
+
+    def display(self):
+        """ Public method to print to the Rectangle instance with #. """
+        char = '#'
+        line = ''
+        for _ in range(self.width):
+            line += char
+        for _ in range(self.height):
+            print(line)

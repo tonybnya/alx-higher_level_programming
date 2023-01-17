@@ -3,6 +3,8 @@
 Unit tests for Rectangle class.
 """
 import unittest
+from unittest.mock import patch
+from io import StringIO
 from models.base import Base
 from models.rectangle import Rectangle
 
@@ -88,3 +90,26 @@ class TestRectangle(unittest.TestCase):
 
         rec.height = 9
         self.assertEqual(rec.area(), 27)
+
+    def test_display(self):
+        """ Test for Rectangle object printed using '#' character. """
+        rec = Rectangle(4, 6)
+        result = "####\n####\n####\n####\n####\n####\n"
+
+        with patch('sys.stdout', new=StringIO()) as output:
+            rec.display()
+            self.assertEqual(output.getvalue(), result)
+
+        rec.width = 3
+        result = "####\n####\n####\n"
+
+        with patch('sys.stdout', new=StringIO()) as output:
+            rec.display()
+            self.assertEqual(output.getvalue(), result)
+
+        rec.height = 5
+        result = "###\n###\n###\n###\n###\n"
+
+        with patch('sys.stdout', new=StringIO()) as output:
+            rec.display()
+            self.assertEqual(output.getvalue(), result)
