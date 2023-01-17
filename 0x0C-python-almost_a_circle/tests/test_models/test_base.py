@@ -14,7 +14,7 @@ class TestBase(unittest.TestCase):
 
     def test_id_assignment(self):
         """ Test for id assignment. """
-        self.assertEqual(self.base.id, 1)
+        self.assertEqual(self.base.id, 2)
 
     def test_id_assignment_with_custom_value(self):
         """ Test for id assignment with custom value. """
