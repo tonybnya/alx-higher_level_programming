@@ -9,8 +9,8 @@ from models.base import Base
 class TestBase(unittest.TestCase):
     """ Test cases for Base class. """
 
-    # def setUp(self):
-    #     self.base = Base()
+    def setUp(self):
+        self.base = Base()
 
     def test_id_assignment_with_custom_value(self):
         """ Test for id assignment with custom value. """
