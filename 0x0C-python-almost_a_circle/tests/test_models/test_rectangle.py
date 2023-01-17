@@ -21,7 +21,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rec.height, 5)
         self.assertEqual(rec.x, 0)
         self.assertEqual(rec.y, 0)
-        self.assertEqual(rec.rec.id, 1)
+        self.assertEqual(rec.id, 1)
 
     def test_rectangle_with_custom_values(self):
         """ Test instanciation with custom values. """
@@ -56,12 +56,24 @@ class TestRectangle(unittest.TestCase):
 
     def test_accessing_to_private_class_attribute_width(self):
         """ Test access to private class attribute width. """
+        rec = Rectangle(1, 2)
+        with self.assertRaises(TypeError):
+            rec.__width
 
     def test_accessing_to_private_class_attribute_height(self):
         """ Test access to private class attribute height. """
+        rec = Rectangle(1, 2)
+        with self.assertRaises(TypeError):
+            rec.__height
 
     def test_accessing_to_private_class_attribute_x(self):
         """ Test access to private class attribute x. """
+        rec = Rectangle(1, 2)
+        with self.assertRaises(TypeError):
+            rec.__x
 
     def test_accessing_to_private_class_attribute_y(self):
         """ Test access to private class attribute y. """
+        rec = Rectangle(1, 2)
+        with self.assertRaises(TypeError):
+            rec.__y
