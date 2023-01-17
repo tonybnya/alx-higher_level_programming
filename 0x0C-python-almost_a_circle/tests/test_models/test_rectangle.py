@@ -101,7 +101,7 @@ class TestRectangle(unittest.TestCase):
             self.assertEqual(output.getvalue(), result)
 
         rec.width = 3
-        result = "####\n####\n####\n"
+        result = "###\n###\n###\n###\n###\n###\n"
 
         with patch('sys.stdout', new=StringIO()) as output:
             rec.display()
