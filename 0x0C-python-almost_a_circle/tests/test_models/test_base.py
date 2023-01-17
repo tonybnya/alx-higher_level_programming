@@ -28,8 +28,8 @@ class TestBase(unittest.TestCase):
         base_2 = Base()
         base_3 = Base()
         self.assertEqual(base_1.id, 6)
-        self.assertEqual(base_2.id, 2)
-        self.assertEqual(base_3.id, 3)
+        self.assertEqual(base_2.id, 7)
+        self.assertEqual(base_3.id, 8)
 
     def test_private_class_attribute_nb_objects_mixed(self):
         """ Test for private class attribute __nb_objects and id assigment. """
@@ -38,7 +38,7 @@ class TestBase(unittest.TestCase):
         base_3 = Base()
         self.assertEqual(base_1.id, 10)
         self.assertEqual(base_2.id, 7)
-        self.assertEqual(base_3.id, 2)
+        self.assertEqual(base_3.id, 11)
 
     def test_number_of_arguments(self):
         """ Test for number of arguments passing in the instanciation. """
