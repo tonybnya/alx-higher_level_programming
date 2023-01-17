@@ -80,7 +80,7 @@ class TestRectangle(unittest.TestCase):
         with self.assertRaises(AttributeError):
             rec.__y
 
-    def test_for_valid_attributes(self):
+    def test_valid_attributes(self):
         """ Test for valid arg passing to the object. """
         with self.assertRaises(TypeError):
             rec = Rectangle('5', 4, 3, 2, 1)
@@ -93,6 +93,20 @@ class TestRectangle(unittest.TestCase):
 
         with self.assertRaises(TypeError):
             rec = Rectangle(5, 4, 3, '2', 1)
+
+    def test_attributes_value(self):
+        """ Test for attributes value. """
+        with self.assertRaises(ValueError):
+            rec = Rectangle(0, 5)
+
+        with self.assertRaises(ValueError):
+            rec = Rectangle(3, 0)
+
+        with self.assertRaises(ValueError):
+            rec = Rectangle(3, 3, -1)
+
+        with self.assertRaises(ValueError):
+            rec = Rectangle(3, 3, 4, -1)
 
     def test_area(self):
         """ Test for the return value of area method. """
