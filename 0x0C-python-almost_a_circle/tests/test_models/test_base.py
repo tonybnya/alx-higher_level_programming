@@ -10,7 +10,9 @@ class TestBase(unittest.TestCase):
     """ Test cases for Base class. """
 
     def setUp(self):
-        self.base = Base()
+        """ Method called before each test. """
+        # self.base = Base()
+        Base.__nb_objects = 0
 
     def test_id_assignment_with_custom_value(self):
         """ Test for id assignment with custom value. """
@@ -20,25 +22,25 @@ class TestBase(unittest.TestCase):
     def test_id_assignment_with_default_value(self):
         """ Test for id assignment with default value. """
         base = Base()
-        self.assertEqual(base.id, 3)
+        self.assertEqual(base.id, 1)
 
     def test_private_class_attribute_nb_objects(self):
         """ Test for private class attribute __nb_objects. """
         base_1 = Base()
         base_2 = Base()
         base_3 = Base()
-        self.assertEqual(base_1.id, 6)
-        self.assertEqual(base_2.id, 7)
-        self.assertEqual(base_3.id, 8)
+        self.assertEqual(base_1.id, 1)
+        self.assertEqual(base_2.id, 2)
+        self.assertEqual(base_3.id, 3)
 
     def test_private_class_attribute_nb_objects_mixed(self):
         """ Test for private class attribute __nb_objects and id assigment. """
         base_1 = Base()
         base_2 = Base(7)
         base_3 = Base()
-        self.assertEqual(base_1.id, 10)
+        self.assertEqual(base_1.id, 1)
         self.assertEqual(base_2.id, 7)
-        self.assertEqual(base_3.id, 11)
+        self.assertEqual(base_3.id, 2)
 
     def test_number_of_arguments(self):
         """ Test for number of arguments passing in the instanciation. """
@@ -47,9 +49,9 @@ class TestBase(unittest.TestCase):
 
     def test_accessing_to_private_class_attribute(self):
         """ Test access to private class attribute. """
-        new_base = Base()
+        base = Base()
         with self.assertRaises(AttributeError):
-            new_base.__nb_objects
+            base.__nb_objects
 
 
 if __name__ == '__main__':
