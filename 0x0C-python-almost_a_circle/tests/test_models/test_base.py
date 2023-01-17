@@ -12,7 +12,7 @@ class TestBase(unittest.TestCase):
     def setUp(self):
         """ Method called before each test. """
         # self.base = Base()
-        Base.__nb_objects = 0
+        Base._Base__nb_objects = 0
 
     def test_id_assignment_with_custom_value(self):
         """ Test for id assignment with custom value. """
