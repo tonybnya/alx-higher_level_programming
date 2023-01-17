@@ -42,8 +42,8 @@ class TestBase(unittest.TestCase):
 
     def test_number_of_arguments(self):
         """ Test for number of arguments passing in the instanciation. """
-        with self.assertRaises(TypeError):
-            base = Base(1, 2)
+        base = Base(1, 2)
+        self.assertRaises(TypeError):
 
 
 if __name__ == '__main__':
