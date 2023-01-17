@@ -30,7 +30,7 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(rec.height, 9)
         self.assertEqual(rec.x, 2)
         self.assertEqual(rec.y, 3)
-        self.assertEqual(rec.rec.id, 4)
+        self.assertEqual(rec.id, 4)
 
     def test_rectangles_comparison(self):
         """ Test to compare two Rectangle objects. """
