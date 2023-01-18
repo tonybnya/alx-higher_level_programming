@@ -16,8 +16,9 @@ class Rectangle(Base):
     Python Inheritance.
     Class Rectangle inherits from Base Class.
     """
+
     def __init__(self, width, height, x=0, y=0, id=None):
-        """ Initialize private instance attributes. """
+        """Initialize private instance attributes."""
         super().__init__(id)
         self.width = width
         self.height = height
@@ -26,75 +27,75 @@ class Rectangle(Base):
 
     @property
     def width(self):
-        """ width getter """
+        """width getter"""
         return self.__width
 
     @width.setter
     def width(self, value):
-        """ width setter """
+        """width setter"""
         if not isinstance(value, int):
-            raise TypeError('width must be an integer')
+            raise TypeError("width must be an integer")
 
         if value <= 0:
-            raise ValueError('width must be > 0')
+            raise ValueError("width must be > 0")
 
         self.__width = value
 
     @property
     def height(self):
-        """ height getter """
+        """height getter"""
         return self.__height
 
     @height.setter
     def height(self, value):
-        """ height setter """
+        """height setter"""
         if not isinstance(value, int):
-            raise TypeError('height must be an integer')
+            raise TypeError("height must be an integer")
 
         if value <= 0:
-            raise ValueError('height must be > 0')
+            raise ValueError("height must be > 0")
 
         self.__height = value
 
     @property
     def x(self):
-        """ x getter """
+        """x getter"""
         return self.__x
 
     @x.setter
     def x(self, value):
-        """ x setter """
+        """x setter"""
         if not isinstance(value, int):
-            raise TypeError('x must be an integer')
+            raise TypeError("x must be an integer")
 
         if value < 0:
-            raise ValueError('x must be >= 0')
+            raise ValueError("x must be >= 0")
 
         self.__x = value
 
     @property
     def y(self):
-        """ y getter """
+        """y getter"""
         return self.__y
 
     @y.setter
     def y(self, value):
-        """ y setter """
+        """y setter"""
         if not isinstance(value, int):
-            raise TypeError('y must be an integer')
+            raise TypeError("y must be an integer")
 
         if value < 0:
-            raise ValueError('y must be >= 0')
+            raise ValueError("y must be >= 0")
 
         self.__y = value
 
     def area(self):
-        """ Public method to compute the area of an Rectangle object. """
+        """Public method to compute the area of an Rectangle object."""
         return self.width * self.height
 
     def display(self):
-        """ Public method to print to the Rectangle instance with #. """
-        char = '#'
+        """Public method to print to the Rectangle instance with #."""
+        char = "#"
         # line = ''
         # for _ in range(self.width):
         #     line += char
@@ -102,13 +103,13 @@ class Rectangle(Base):
         #     print(line)
         rectangle = self.y * "\n"
         for _ in range(self.height):
-            rectangle += (" " * self.x)
+            rectangle += " " * self.x
             rectangle += (char * self.width) + "\n"
 
-        print(rectangle, end='')
+        print(rectangle, end="")
 
     def __str__(self):
-        """ Special method to print a custom string for a rectangle object. """
+        """Special method to print a custom string for a rectangle object."""
         # [Rectangle] (<id>) <x>/<y> - <width>/<height>
         string_start = "[Rectangle] "
         string_id = "({}) ".format(self.id)
@@ -116,3 +117,13 @@ class Rectangle(Base):
         string_wh = "{}/{}".format(self.width, self.height)
 
         return string_start + string_id + string_xy + string_wh
+
+    def update(self, *args, **kwargs):
+        """Public method to assign an argument to each attribute."""
+        if args is not None and len(args) != 0:
+            list_attr = ["id", "width", "height", "x", "y"]
+            for i in range(len(args)):
+                setattr(self, list_attr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                setattr(self, key, value)
