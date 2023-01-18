@@ -26,3 +26,13 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(square.x, 0)
         self.assertEqual(square.y, 0)
         self.assertEqual(square.id, 1)
+
+    def test_square_with_custom_values(self):
+        """ Test with custom values. """
+        square = Square(5, 3, 3, 2)
+        self.assertEqual(square.size, 5)
+        self.assertEqual(square.width, 5)
+        self.assertEqual(square.height, 5)
+        self.assertEqual(square.x, 3)
+        self.assertEqual(square.y, 3)
+        self.assertEqual(square.id, 2)
