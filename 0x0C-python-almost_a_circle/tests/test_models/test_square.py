@@ -63,3 +63,27 @@ class TestSquare(unittest.TestCase):
         """ Test error raised with no args passed """
         with self.assertRaises(TypeError):
             square = Square(1, 1, 1, 1, 1)
+
+    def test_access_private_class_attribute_width(self):
+        """ Test for trying to access to private attribute width. """
+        square = Square(1)
+        with self.assertRaises(AttributeError):
+            square.__width
+
+    def test_access_private_class_attribute_height(self):
+        """ Test for trying to access to private attribute height. """
+        square = Square(1)
+        with self.assertRaises(AttributeError):
+            square.__height
+
+    def test_access_private_class_attribute_x(self):
+        """ Test for trying to access to private attribute x. """
+        square = Square(1)
+        with self.assertRaises(AttributeError):
+            square.__x
+
+    def test_access_private_class_attribute_y(self):
+        """ Test for trying to access to private attribute y. """
+        square = Square(1)
+        with self.assertRaises(AttributeError):
+            square.__y
