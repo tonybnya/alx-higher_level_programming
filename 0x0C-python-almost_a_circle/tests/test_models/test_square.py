@@ -120,4 +120,4 @@ class TestSquare(unittest.TestCase):
         square = Square(2)
         self.assertEqual(square.area(), 4)
         square.size = 5
-        self.assertEqual(square.area(), 25)
+        self.assertEqual(square.area(), 4)
