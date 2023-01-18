@@ -87,3 +87,25 @@ class TestSquare(unittest.TestCase):
         square = Square(1)
         with self.assertRaises(AttributeError):
             square.__y
+
+    def test_valid_attributes(self):
+        """ Test for valid arg passing to the object. """
+        with self.assertRaises(TypeError):
+            square = Square("2", 2, 2, 2)
+
+        with self.assertRaises(TypeError):
+            square = Square(2, "2", 2, 2)
+
+        with self.assertRaises(TypeError):
+            square = Square(2, 2, "2", 2)
+
+    def test_attributes_value(self):
+        """ Test for attributes value. """
+        with self.assertRaises(ValueError):
+            square = Square(0)
+
+        with self.assertRaises(ValueError):
+            square = Square(1, -1)
+
+        with self.assertRaises(ValueError):
+            square = Square(1, 1, -1)
