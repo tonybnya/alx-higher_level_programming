@@ -109,3 +109,15 @@ class TestSquare(unittest.TestCase):
 
         with self.assertRaises(ValueError):
             square = Square(1, 1, -1)
+
+    def test_area0(self):
+        """ Test for the return value of area method. """
+        square = Square(4)
+        self.assertEqual(square.area(), 16)
+
+    def test_area1(self):
+        """ Test for the return value of area method. """
+        square = Square(2)
+        self.assertEqual(square.area(), 4)
+        square.size = 5
+        self.assertEqual(square.area(), 25)
