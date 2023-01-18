@@ -41,3 +41,26 @@ class Square(Rectangle):
         string_s = "{}".format(self.width)
 
         return string_start + string_id + string_xy + string_s
+
+    def update(self, *args, **kwargs):
+        """ update method """
+        if args is not None and len(args) != 0:
+            list_atr = ['id', 'size', 'x', 'y']
+            for i in range(len(args)):
+                if list_atr[i] == 'size':
+                    setattr(self, 'width', args[i])
+                    setattr(self, 'height', args[i])
+                else:
+                    setattr(self, list_atr[i], args[i])
+        else:
+            for key, value in kwargs.items():
+                if key == 'size':
+                    setattr(self, 'width', value)
+                    setattr(self, 'height', value)
+                else:
+                    setattr(self, key, value)
+
+    def to_dictionary(self):
+
+        """ Returns the dictionary representation of a Square. """
+        return ({'id': self.id, 'x': self.x, 'size': self.size, 'y': self.y})
