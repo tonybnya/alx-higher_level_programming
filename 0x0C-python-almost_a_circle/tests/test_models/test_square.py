@@ -43,3 +43,23 @@ class TestSquare(unittest.TestCase):
         square2 = Square(1, 1)
         self.assertEqual(False, square1 is square2)
         self.assertEqual(False, square1.id == square2.id)
+
+    def test_is_Base_instance(self):
+        """ Test Square is a Base instance. """
+        square = Square(1)
+        self.assertEqual(True, isinstance(square, Base))
+
+    def test_is_Rectangle_instance(self):
+        """ Test Square is a Rectangle instance. """
+        square = Square(1)
+        self.assertEqual(True, isinstance(square, Rectangle))
+
+    def test_no_arguments(self):
+        """ Test error raising with no argument passed. """
+        with self.assertRaises(TypeError):
+            square = Square()
+
+    def test_number_of_arguments(self):
+        """ Test error raised with no args passed """
+        with self.assertRaises(TypeError):
+            square = Square(1, 1, 1, 1, 1)
