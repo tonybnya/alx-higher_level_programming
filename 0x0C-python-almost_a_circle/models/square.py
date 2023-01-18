@@ -20,6 +20,7 @@ class Square(Rectangle):
     def __init__(self, size, x=0, y=0, id=None):
         """ Initialize instances from attributes of Rectangle class. """
         super().__init__(size, size, x, y, id)
+        self.size = size
 
     def __str__(self):
         """Special method to print a custom string of a square object."""
