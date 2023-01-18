@@ -36,3 +36,10 @@ class TestSquare(unittest.TestCase):
         self.assertEqual(square.x, 3)
         self.assertEqual(square.y, 3)
         self.assertEqual(square.id, 2)
+
+    def test_squares_comparison(self):
+        """ Test to compare two squares. """
+        square1 = Square(1, 1)
+        square2 = Square(1, 1)
+        self.assertEqual(False, square1 is square2)
+        self.assertEqual(False, square1.id == square2.id)
