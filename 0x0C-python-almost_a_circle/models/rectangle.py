@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-class Rectangle that inherits from Base class
+Class Rectangle that inherits from Base class.
 This class has:
     - private instance attribute width
     - private instance attribute height
@@ -14,7 +14,7 @@ from models.base import Base
 class Rectangle(Base):
     """
     Python Inheritance.
-    Class Rectangle inherits from Base Class.
+    Class Rectangle inherits from Base class.
     """
 
     def __init__(self, width, height, x=0, y=0, id=None):
@@ -109,7 +109,7 @@ class Rectangle(Base):
         print(rectangle, end="")
 
     def __str__(self):
-        """Special method to print a custom string for a rectangle object."""
+        """Special method to print a custom string of a rectangle object."""
         # [Rectangle] (<id>) <x>/<y> - <width>/<height>
         string_start = "[Rectangle] "
         string_id = "({}) ".format(self.id)
