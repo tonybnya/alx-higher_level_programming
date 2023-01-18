@@ -2,7 +2,7 @@
 # 2-append_write.py
 # tonybnya
 """
-Appends a string to the end of a text file (UTF-8)
+Appends a string to the end of a text file (UTF-8).
 """
 
 
