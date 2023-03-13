@@ -5,9 +5,9 @@ const arg = parseInt(process.argv[2]);
 function factorial (num) {
   if (num < 2) {
     return 1;
+  } else {
+    return num * factorial(num - 1);
   }
-
-  return num * factorial(num - 1);
 }
 
-log(arg === 'undefined' ? 1 : factorial(arg))
+log(isNaN(arg) ? 1 : factorial(arg))
