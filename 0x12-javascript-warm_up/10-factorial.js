@@ -3,7 +3,7 @@ const log = (arg) => console.log(arg);
 const arg = parseInt(process.argv[2]);
 
 function factorial (num) {
-  if (num === 1) {
+  if (num < 1) {
     return 0;
   }
 
