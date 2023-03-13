@@ -4,7 +4,7 @@ const arg = parseInt(process.argv[2]);
 
 function factorial (num) {
   if (num < 2) {
-    return 0;
+    return 1;
   }
 
   return num * factorial(num - 1);
