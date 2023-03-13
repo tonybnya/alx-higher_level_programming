@@ -7,5 +7,4 @@ function add(a, b) {
   return a + b;
 }
 
-
-log(a === 'undefined' || b === 'undefined' ? NaN : add(a, b));
+log(a === 'undefined' || b === 'undefined' ? NaN : parseInt(add(a, b)));
