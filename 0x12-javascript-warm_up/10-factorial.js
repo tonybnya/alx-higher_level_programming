@@ -10,4 +10,4 @@ function factorial (num) {
   }
 }
 
-log(isNaN(arg) ? 1 : factorial(arg))
+log(isNaN(arg) ? 1 : factorial(arg));
