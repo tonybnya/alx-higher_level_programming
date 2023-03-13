@@ -1,5 +1,4 @@
 #!/usr/bin/node
-
 const args = process.argv.length;
 let str = 'Argument';
 
