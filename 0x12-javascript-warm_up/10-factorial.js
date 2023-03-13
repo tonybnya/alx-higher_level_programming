@@ -7,7 +7,7 @@ function factorial (num) {
     return 0;
   }
 
-  return factorial(num) * factorial(num - 1);
+  return num * factorial(num - 1);
 }
 
 log(arg === 'undefined' ? 1 : factorial(arg))
