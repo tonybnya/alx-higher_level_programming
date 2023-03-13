@@ -1,8 +1,6 @@
 #!/usr/bin/node
-import { argv } from 'node:process';
 
-const args = argv.length;
-const log = (arg) => console.log(arg);
+const args = process.argv.length;
 let str = 'Argument';
 
 if (args === 2) {
