@@ -1,8 +1,6 @@
 #!/usr/bin/node
 const args = process.argv.length;
-let str = 'Argument';
+const log = (arg) => console.log(arg);
+let s = 'Argument';
 
-if (args === 2) {
-  console.log('No argument');
-}
-args === 3 ? console.log(`${str} found`) : console.log(`${str}s found`);
+log(args === 2 ? 'No argument' : args === 3 ? log(`${str} found`) : log(`${str}s found`));
