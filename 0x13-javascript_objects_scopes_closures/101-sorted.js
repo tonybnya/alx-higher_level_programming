@@ -1,15 +1,14 @@
 #!/usr/bin/node
 const { dict } = require('./101-data').dict;
-const newDict = {};
+let result = {};
 
 for (const key in dict) {
   const occurrences = dict[key];
 
-  if (!newDict[occurrences]) {
-    newDict[occurrences] = [];
+  if (!result[occurrences]) {
+    result[occurrences] = [];
   }
-
-  newDict[occurrences].push(key);
+  result[occurrences].push(key);
 }
 
-console.log(newDict);
+console.log(result);
