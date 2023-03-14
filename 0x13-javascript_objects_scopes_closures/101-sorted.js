@@ -1,10 +1,15 @@
 #!/usr/bin/node
-const dict = require('./101-data').dict;
-let newDict = {};
-for (let key in dict) {
-  if (newDict[dict[key]] === undefined) {
-    newDict[dict[key]] = key;
-  } else {
-    newDict[dict[key]].push(key);
+const { dict } = require('./101-data').dict;
+const newDict = {};
+
+for (const key in dict) {
+  const occurrences = dict[key];
+
+  if (!newDict[occurrences]) {
+    newDict[occurrences] = [];
   }
+
+  newDict[occurrences].push(key);
 }
+
+console.log(newDict);
