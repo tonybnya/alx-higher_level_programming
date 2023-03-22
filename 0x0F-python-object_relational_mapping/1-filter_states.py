@@ -21,7 +21,7 @@ def main():
 
     cur = database.cursor()
     cur.execute("""SELECT * FROM states WHERE states.name
-                LIKE BINARY '%N' ORDER BY states.id ASC""")
+                LIKE 'N%' ORDER BY states.id""")
 
     for state in cur.fetchall():
         print(state)
