@@ -1,9 +1,9 @@
 #!/usr/bin/python3
-# 1-filter_states.py
+# 2-my_filter_states.py
 # Author: @tonybnya
 """
-This scrip lists all states with a name starting with N (upper N) from the
-database hbtn_0e_0_usa.
+This script takes in an argument and displays all values in the states table of
+hbtn_0e_0_usa where name matches the argument.
 """
 import sys
 import MySQLdb
@@ -18,10 +18,11 @@ def main():
         passwd=sys.argv[2],
         db=sys.argv[3]
     )
+    state_name = sys.argv[4]
 
     cursor = database.cursor()
     cursor.execute("""SELECT * FROM states WHERE states.name
-                LIKE BINARY 'N%' ORDER BY states.id""")
+                   LIKE BINARY %s ORDER BY states.id""", (state_name))
 
     for state in cursor.fetchall():
         print(state)
