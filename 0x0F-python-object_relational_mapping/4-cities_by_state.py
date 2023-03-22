@@ -19,7 +19,10 @@ def main():
     )
 
     cursor = database.cursor()
-    cursor.execute("SELECT * FROM cities ORDER BY cities.id")
+    query = """SELECT cities.id, cities.name, states.name FROM states JOIN cities
+    ON states.id=cities.state_id ORDER BY cities.id ASC
+    """
+    cursor.execute(query)
 
     for city in cursor.fetchall():
         print(city)
