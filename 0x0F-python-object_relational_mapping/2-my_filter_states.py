@@ -21,8 +21,8 @@ def main():
     state_name = sys.argv[4]
 
     cursor = database.cursor()
-    cursor.execute("""SELECT * FROM states WHERE states.name
-                   LIKE BINARY %s ORDER BY states.id""", (state_name))
+    cursor.execute("SELECT * FROM states WHERE states.name \
+                   LIKE BINARY %s ORDER BY states.id", (state_name))
 
     for state in cursor.fetchall():
         print(state)
