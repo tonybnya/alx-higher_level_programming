@@ -19,9 +19,9 @@ def main():
     )
 
     cursor = database.cursor()
-    query = """SELECT cities.id, cities.name, states.name FROM states JOIN cities
+    query = ("""SELECT cities.id, cities.name, states.name FROM states JOIN cities
     ON states.id=cities.state_id ORDER BY cities.id ASC
-    """
+    """)
     cursor.execute(query)
 
     for city in cursor.fetchall():
