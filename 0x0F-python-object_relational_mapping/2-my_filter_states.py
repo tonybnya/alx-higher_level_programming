@@ -22,7 +22,7 @@ def main():
 
     cursor = database.cursor()
     cursor.execute("SELECT * FROM states WHERE states.name \
-                   LIKE BINARY %s ORDER BY states.id", (state_name))
+                   BINARY %s ORDER BY states.id", (state_name))
 
     for state in cursor.fetchall():
         print(state)
