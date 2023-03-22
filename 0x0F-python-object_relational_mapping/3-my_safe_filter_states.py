@@ -23,7 +23,7 @@ def main():
 
     cursor = database.cursor()
     query = "SELECT * FROM states WHERE BINARY states.name=%s"
-    cursor.execute(query, state_name)
+    cursor.execute(query, (state_name,))
 
     for state in cursor.fetchall():
         print(state)
