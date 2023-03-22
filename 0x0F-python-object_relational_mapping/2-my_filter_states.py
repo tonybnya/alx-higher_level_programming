@@ -21,8 +21,8 @@ def main():
     state_name = sys.argv[4]
 
     cursor = database.cursor()
-    cursor.execute("SELECT * FROM states WHERE states.name \
-                   BINARY states.name='{}'".format(state_name))
+    cursor.execute("""SELECT * FROM states WHERE
+                   BINARY states.name='{}'""".format(state_name))
 
     for state in cursor.fetchall():
         print(state)
