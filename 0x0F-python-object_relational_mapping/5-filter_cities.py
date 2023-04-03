@@ -21,13 +21,12 @@ def main():
     state_name = sys.argv[4]
 
     cursor = database.cursor()
-    query = """SELECT cities.name FROM cities JOIN states ON
-    cities.id=cities.state_id WHERE states.name=%s
-    ORDER BY cities.id ASC"""
-    cursor.execute(query, (state_name,))
+    query = """SELECT `cities` as `c` INNER JOIN `states` as `s` \
+    ON `c`.`state_id` = `s`.`id` ORDER BY `c`.`id`
+    """
+    cursor.execute(query)
 
-    for city in cursor.fetchall():
-        print(city)
+    print(', '.join([c[2] for c in cursor.fetchall() if c[4] == state_name]))
 
     cursor.close()
     database.close()
