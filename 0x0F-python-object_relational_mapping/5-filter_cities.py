@@ -21,7 +21,6 @@ def main():
         db=sys.argv[3],
         charset="utf-8"
     )
-    state_name = sys.argv[4]
 
     cursor = database.cursor()
     query = ' '.join([
@@ -29,7 +28,7 @@ def main():
         "INNER JOIN states ON states.id = cities.state_id",
         "WHERE states.name LIKE BINARY '{}'",
         "ORDER BY cities.id",
-    ]).format(state_name)
+    ]).format(sys.argv[4])
 
     cursor.execute(query)
     result = cursor.fetchall()
