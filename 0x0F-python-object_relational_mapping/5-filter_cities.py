@@ -21,8 +21,8 @@ def main():
     state_name = sys.argv[4]
 
     cursor = database.cursor()
-    query = """SELECT cities.id, cities.name, states.name FROM states
-    JOIN cities ON cities.state_id=states.id WHERE states.name=%s
+    query = """SELECT cities.name FROM cities JOIN states ON
+    cities.id=cities.state_id WHERE states.name=%s
     ORDER BY cities.id ASC"""
     cursor.execute(query, (state_name,))
 
