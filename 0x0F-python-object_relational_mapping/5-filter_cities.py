@@ -14,19 +14,28 @@ def main():
     Main function
     """
     database = MySQLdb.connect(
+        host="localhost",
+        port="3306",
         user=sys.argv[1],
         passwd=sys.argv[2],
-        db=sys.argv[3]
+        db=sys.argv[3],
+        charset="utf-8"
     )
     state_name = sys.argv[4]
 
     cursor = database.cursor()
-    query = """SELECT `cities` as `c` INNER JOIN `states` as `s` \
-    ON `c`.`state_id` = `s`.`id` ORDER BY `c`.`id`
-    """
-    cursor.execute(query)
+    query = ' '.join([
+        "SELECT cities.name FROM cities",
+        "INNER JOIN states ON states.id = cities.state_id",
+        "WHERE states.name LIKE BINARY '{}'",
+        "ORDER BY cities.id",
+    ]).format(state_name)
 
-    print(', '.join([c[2] for c in cursor.fetchall() if c[4] == state_name]))
+    cursor.execute(query)
+    result = cursor.fetchall()
+    str_result = ', '.join([i[0] for i in result])
+
+    print(str_result)
 
     cursor.close()
     database.close()
