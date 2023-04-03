@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 # 6-model_state.py
-# Author: @tonybnya
+# Author: @ALX
 """Start link class to table in database
 """
 import sys
