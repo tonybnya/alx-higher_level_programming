@@ -18,7 +18,7 @@ def main():
     user = sys.argv[2]
     url = "https://api.github.com/repos/{}/{}/commits".format(user, repo)
 
-    json = get(url).json()
+    json = requests.get(url).json()
 
     print(json)
 
