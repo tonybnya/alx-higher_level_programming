@@ -18,9 +18,16 @@ def main():
     user = sys.argv[2]
     url = "https://api.github.com/repos/{}/{}/commits".format(user, repo)
 
-    json = requests.get(url).json()
+    commits = requests.get(url).json()
 
-    print(json)
+    counter = 0
+    for commit in commits:
+        if counter > 9:
+            break
+        sha = commit.get('sha')
+        author = commit.get('commit').get('author').get('name')
+
+        print("{}: {}".format(sha, author))
 
 
 if __name__ == '__main__':
