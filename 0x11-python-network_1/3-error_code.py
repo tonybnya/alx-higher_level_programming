@@ -11,13 +11,11 @@ from urllib import request, error
 
 def main():
     """ Main function """
-    url = sys.argv[1]
-
     try:
-        with request.urlopen(url) as response:
+        with request.urlopen(sys.argv[1]) as response:
             print(response.read().decode('utf-8'))
-        except error.HTTPError as err:
-            print("Error code: {}".format(err.status))
+    except error.HTTPError as err:
+        print("Error code: {}".format(err.status))
 
 
 if __name__ == '__main__':
