@@ -3,7 +3,7 @@
 // the character “Wedge Antilles” is present.
 
 const req = require('request');
-const url = process.argv[2]
+const url = process.argv[2];
 const log = (arg) => console.log(arg);
 let counter = 0;
 
@@ -20,7 +20,7 @@ req(url, (err, res, body) => {
       if (char.includes(18)) {
         counter += 1;
       }
-    })
+    });
   });
 
   log(counter);
