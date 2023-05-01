@@ -14,11 +14,13 @@ req.get(url, (err, res, body) => {
 
   const data = JSON.parse(body);
 
-  data.forEach((user) => {
-    if (!completedTasks[user.userId] && user.completed) {
-      completedTasks[user.userId] = 1;
-    } else {
-      completedTasks[user.userId] += 1;
+  data.forEach((task) => {
+    if (task.completed) {
+      if (!completedTasks[task.userId]) {
+        completedTasks[task.userId] = 1;
+      } else {
+        completedTasks[task.userId] += 1;
+      }
     }
   });
 
