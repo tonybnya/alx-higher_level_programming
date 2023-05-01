@@ -14,5 +14,11 @@ req.get(url, (err, res, body) => {
 
   const data = JSON.parse(body);
 
-  log(data);
+  data.forEach((user) => {
+    if (!completedTasks.includes(user.userId)) {
+      completedTasks[userId] = 1;
+    } else {
+      completedTasks[userId] += 1;
+    }
+  });
 });
