@@ -13,6 +13,6 @@ req.get(endpoint, (err, res, body) => {
     console.error(err);
     process.exit(1);
   }
-  const title = JSON.parse(body).title;
-  log(title);
+  const data = JSON.parse(body);
+  log(data.title);
 });
