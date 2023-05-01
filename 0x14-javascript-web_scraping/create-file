@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+# This script creates a file named the same
+# as an argument entered in the prompt shell
+
+read -rp "Enter a filename: " filename
+
+touch "$filename"
+chmod u+x "$filename"
+
+echo "#!/usr/bin/node" > "$filename"
+echo "# This JS script" >> "$filename"
+
+echo "File $filename created!"
+
+vim "$filename"

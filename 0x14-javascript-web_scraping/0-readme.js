@@ -1,4 +1,6 @@
 #!/usr/bin/node
+# This JS script reads and prints the content of a file.
+
 const fs = require('fs');
 const file = process.argv[2];
 const log = (arg) => console.log(arg);
