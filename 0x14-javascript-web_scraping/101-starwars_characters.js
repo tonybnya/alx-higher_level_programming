@@ -7,16 +7,18 @@ const id = process.argv[2];
 const url = 'https://swapi-api.alx-tools.com/api/films/';
 const endpoint = `${url}${id}`;
 
-const printChars = (endpoint) => {
-  req.get(endpoint, (err, res, body) => {
+const printChars = (data, idx) => {
+  req(data[idx], (err, res, body) => {
     if (err) {
       console.error(err);
       process.exit(1);
     }
 
-    const data = JSON.parse(body);
+    log(JSON.parse(body).name);
 
-    log(data.name);
+    if (idx + 1 < data.length) {
+      printChars(data, idx + 1);
+    }
   });
 };
 
@@ -29,7 +31,5 @@ req.get(endpoint, (err, res, body) => {
   const data = JSON.parse(body);
   const chars = data.characters;
 
-  chars.forEach((char) => {
-    printChars(char);
-  });
+  printChars(chars, 0);
 });
