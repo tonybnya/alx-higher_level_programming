@@ -5,7 +5,7 @@
 const req = require('request');
 const log = (arg) => console.log(arg);
 const id = process.argv[2];
-const url = 'https://swapi-api.alx-tools.com/api/films/'
+const url = 'https://swapi-api.alx-tools.com/api/films/';
 const endpoint = `${url}${id}`;
 
 req.get(endpoint, (err, res, body) => {
