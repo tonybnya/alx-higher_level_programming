@@ -15,10 +15,10 @@ req.get(url, (err, res, body) => {
   const data = JSON.parse(body);
 
   data.forEach((user) => {
-    if (!(user.userId in completedTasks)) {
-      completedTasks[userId] = 1;
+    if (!completedTasks[user.userId]) {
+      completedTasks[user.userId] = 1;
     } else {
-      completedTasks[userId] += 1;
+      completedTasks[user.userId] += 1;
     }
   });
 
