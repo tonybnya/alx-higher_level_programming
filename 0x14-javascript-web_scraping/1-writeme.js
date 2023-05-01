@@ -10,5 +10,5 @@ if (process.argv === 4) {
       console.error(err);
       process.exit(1);
     }
-  }); 
+  });
 }
