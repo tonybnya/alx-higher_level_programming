@@ -15,7 +15,7 @@ req.get(url, (err, res, body) => {
   const data = JSON.parse(body);
 
   data.forEach((user) => {
-    if (!completedTasks[user.userId]) {
+    if (!completedTasks[user.userId] && user.completed) {
       completedTasks[user.userId] = 1;
     } else {
       completedTasks[user.userId] += 1;
