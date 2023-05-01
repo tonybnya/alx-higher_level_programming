@@ -1,8 +1,5 @@
 #!/usr/bin/node
-<<<<<<< HEAD
-# This JS script reads and prints the content of a file.
-=======
->>>>>>> 30d935299e6d59b7a58647935e6686c0b84063c3
+// This JS script reads and prints the content of a file.
 
 const fs = require('fs');
 const file = process.argv[2];

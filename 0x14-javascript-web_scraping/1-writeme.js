@@ -1,4 +1,5 @@
 #!/usr/bin/node
+// This JS script writes a string to a file.
 
 const fs = require('fs');
 const file = process.argv[2];

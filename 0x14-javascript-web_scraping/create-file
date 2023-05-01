@@ -8,6 +8,7 @@ touch "$filename"
 chmod u+x "$filename"
 
 echo "#!/usr/bin/node" > "$filename"
+echo "// This JS script" >> "$filename"
 echo "" >> "$filename"
 
 echo "File $filename created!"
