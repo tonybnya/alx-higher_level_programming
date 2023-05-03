@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script creates a file named the same as an argument entered in the
+# prompt shell
+
+read -rp "Enter a filename: " filename
+touch "$filename"
+{
+    echo "\$(document).ready(function () {"
+    echo "});"
+} >> "$filename"
+
+echo "File $filename created!"
