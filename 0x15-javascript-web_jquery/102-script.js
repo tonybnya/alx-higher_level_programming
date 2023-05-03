@@ -3,7 +3,6 @@ $(document).ready(() => {
 
   $('#btn_translate').click(() => {
     const lang = $('#language_code').val();
-    const API = `${URL}?lang=${lang}`
 
     $.ajax({
       url: `${URL}?lang=${lang}`,

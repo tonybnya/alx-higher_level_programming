@@ -4,7 +4,7 @@ $(document).ready(function () {
   });
 
   $('#remove_item').click(() => {
-    let items = $('.my_list li')
+    const items = $('.my_list li');
     console.log(items);
     items.length > 0 ? items[items.length - 1].remove() : console.log(items);
   });
